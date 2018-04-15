@@ -12,7 +12,19 @@ import java.util.List;
 @Repository
 public interface ExchangeRateRepository extends CrudRepository<ExchangeRate, Long>
 {
+    /**
+     * Returns latest exchange rate ordered by timestamp.
+     *
+     * @return ExchangeRate
+     */
     ExchangeRate findFirstByOrderByTimestampDesc();
 
+    /**
+     * Returns exchange rates between start and end dates.
+     *
+     * @param startDate
+     * @param endDate
+     * @return List<ExchangeRate>
+     */
     List<ExchangeRate> findAllByDateBetween(String startDate, String endDate);
 }

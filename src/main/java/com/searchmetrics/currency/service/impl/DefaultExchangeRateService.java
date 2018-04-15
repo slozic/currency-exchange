@@ -11,6 +11,9 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import java.util.List;
 
+/**
+ * @author Slavko Lozić (slozic1@gmail.com)
+ */
 @Service
 public class DefaultExchangeRateService implements ExchangeRateService
 {

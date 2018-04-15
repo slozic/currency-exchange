@@ -10,9 +10,20 @@ import java.util.List;
  */
 public interface ExchangeRateService
 {
+    /**
+     * @return ExchangeRateData
+     */
     ExchangeRateData getLatestRateFromPublicApi();
 
+    /**
+     * @return ExchangeRate
+     */
     ExchangeRate getLatestRate();
 
+    /**
+     * @param startDate
+     * @param endDate
+     * @return List<ExchangeRate>
+     */
     List<ExchangeRate> getHistoricalRates(String startDate, String endDate);
 }
