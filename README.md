@@ -17,12 +17,13 @@ $ http://localhost:8090/latest
 $ http://localhost:8090/timeseries?startDate=2018-04-15&endDate=2018-04-16
 ```
 
+### Installation
+
 Prerequisites:
 
 - [Git](https://git-scm.com/)
 - [Maven](https://maven.apache.org/download.cgi)
 
-### Installation
 ##### Clone and start the app:
 
 ```
@@ -31,20 +32,23 @@ $ cd currency-exchange.git
 $ mvn spring-boot:run
 ```
 
-#### Tests
+#### Unit Tests
 Can be run from command line:
 
 ```
 $ mvn test
 ```
+Mock mvc and service tests:
 - class DefaultExchangeRateControllerTest
   - getLatestRate()
   - getRatesBetweenDates()
-  
+
+Data access tests:
 - class ExchangeRateRepositoryTest
   - findFirstByOrderByTimestampDesc()
   - findAllByDateBetween
-
+  
+Public api test:
 - class DefaultExchangeRateServiceTest
   - getLatestRateFromPublicApi()
 
